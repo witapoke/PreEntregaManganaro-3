@@ -1,5 +1,7 @@
-$input-background: rgba(34, 42, 73, 0.8);
-$input-text-inactive: #a5b2de;
+$azul-oscuro: rgba(34, 42, 73, 0.8);
+$azul-oscuro-2: #1c2955;
+$azul-clarito: #c8c9cd;
+$azul-clarito-2: rgba(102, 130, 234, 0.8);
 $input-text-active: #bfd2ff;
 
 @mixin button-styles($fs, $color, $fw, $padding, $width, $border) {
@@ -7,7 +9,7 @@ $input-text-active: #bfd2ff;
   color: $color;
   font-weight: $fw;
   padding: $padding;
-  width: $width;
+  min-width: $width;
   border: $border;
 }
 
@@ -19,8 +21,28 @@ $input-text-active: #bfd2ff;
 }
 
 .brand-title {
-  color: #1c2955;
+  color: $azul-oscuro-2;
   font-weight: bold;
+}
+
+.anchor {
+  color: $azul-clarito-2;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 17px;
+  min-width: 100px;
+  text-align: center;
+}
+
+.lista-larger-btn {
+  min-width: 250px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 .justify {
@@ -42,14 +64,14 @@ $input-text-active: #bfd2ff;
   width: 300px;
   padding: 5px;
   padding-left: 10px;
-  background-color: $input-background;
+  background-color: $azul-oscuro;
   color: white;
   border: none;
   border-radius: 3px;
 }
 
 .input::placeholder {
-  color: $input-text-inactive;
+  color: $azul-clarito;
 }
 
 .lista {
@@ -68,13 +90,6 @@ $input-text-active: #bfd2ff;
     );
     cursor: pointer;
     background-color: white;
-  }
-}
-
-.lista-larger-btn {
-  @extend .lista;
-  button {
-    width: 150px;
   }
 }
 
@@ -124,7 +139,7 @@ $input-text-active: #bfd2ff;
 
 .product-item:hover {
   cursor: pointer;
-  border: 2px solid $input-background;
+  border: 2px solid $azul-oscuro;
 }
 
 .formulario {
@@ -135,9 +150,9 @@ $input-text-active: #bfd2ff;
   padding: 10px;
   height: 100%;
   button {
-    @include button-styles(17px, #a5b2de, bold, 0 5px, 150px, none);
+    @include button-styles(17px, $azul-clarito, bold, 0 5px, 150px, none);
     cursor: pointer;
-    background-color: black;
+    background-color: $azul-oscuro;
   }
   div {
     display: flex;
@@ -156,6 +171,13 @@ $input-text-active: #bfd2ff;
   margin-top: 20px;
 }
 
+.footer-container-men {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 280px;
+}
+
 .footer-row {
   display: flex;
   gap: 10px;
@@ -169,7 +191,7 @@ $input-text-active: #bfd2ff;
   justify-content: center;
   min-height: 200px;
   h2 {
-    color: $input-background;
+    color: $azul-oscuro;
     font-weight: 600;
   }
   ul {
@@ -195,8 +217,74 @@ $input-text-active: #bfd2ff;
   }
 }
 
+.women-products-container {
+  h3 {
+    font-weight: bold;
+    font-size: 35px;
+    padding-bottom: 10px;
+  }
+}
+
+.women-examples {
+  display: flex;
+  margin-top: 5px;
+}
+
+.women-article {
+  text-align: center;
+
+  margin-top: 15px;
+  img {
+    height: 120px;
+    width: 120px;
+  }
+}
+
+.women-article:hover {
+  border: 2px solid black;
+}
+
+.women-details {
+  height: 50px;
+  p {
+    margin: 0;
+    font-weight: bold;
+  }
+}
+
+.pagination-list {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 30px;
+  li {
+    font-size: 16px;
+    width: 30px;
+  }
+  li:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+
+.filters-div {
+  margin-top: 10px;
+  display: flex;
+  gap: 15px;
+  button {
+    @include button-styles(17px, $azul-clarito, bold, 0 5px, 200px, none);
+    cursor: pointer;
+    background-color: $azul-oscuro;
+  }
+}
+
 /////
 @media (max-width: 992px) {
+  .anchor {
+    text-align: left;
+  }
+
   .justify-nav {
     display: flex;
     flex-direction: column;

@@ -10,6 +10,26 @@
   font-weight: bold;
 }
 
+.anchor {
+  color: rgba(102, 130, 234, 0.8);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 17px;
+  min-width: 100px;
+  text-align: center;
+}
+
+.lista-larger-btn {
+  min-width: 250px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 .justify, .justify-nav {
   display: flex;
   justify-content: space-between;
@@ -35,28 +55,24 @@
 }
 
 .input::placeholder {
-  color: #a5b2de;
+  color: #c8c9cd;
 }
 
-.lista, .lista-larger-btn {
+.lista {
   display: flex;
   gap: 5px;
   align-items: center;
   margin-left: 80px;
 }
-.lista button, .lista-larger-btn button {
+.lista button {
   font-size: 17px;
   color: rgba(102, 130, 234, 0.8);
   font-weight: bold;
   padding: 0 5px;
-  width: 100px;
+  min-width: 100px;
   border: none;
   cursor: pointer;
   background-color: white;
-}
-
-.lista-larger-btn button {
-  width: 150px;
 }
 
 .c-item {
@@ -117,13 +133,13 @@
 }
 .formulario button {
   font-size: 17px;
-  color: #a5b2de;
+  color: #c8c9cd;
   font-weight: bold;
   padding: 0 5px;
-  width: 150px;
+  min-width: 150px;
   border: none;
   cursor: pointer;
-  background-color: black;
+  background-color: rgba(34, 42, 73, 0.8);
 }
 .formulario div {
   display: flex;
@@ -139,6 +155,13 @@
 .footer-container {
   min-height: 200px;
   margin-top: 20px;
+}
+
+.footer-container-men {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 280px;
 }
 
 .footer-row {
@@ -180,7 +203,74 @@
   cursor: pointer;
 }
 
+.women-products-container h3 {
+  font-weight: bold;
+  font-size: 35px;
+  padding-bottom: 10px;
+}
+
+.women-examples {
+  display: flex;
+  margin-top: 5px;
+}
+
+.women-article {
+  text-align: center;
+  margin-top: 15px;
+}
+.women-article img {
+  height: 120px;
+  width: 120px;
+}
+
+.women-article:hover {
+  border: 2px solid black;
+}
+
+.women-details {
+  height: 50px;
+}
+.women-details p {
+  margin: 0;
+  font-weight: bold;
+}
+
+.pagination-list {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 30px;
+}
+.pagination-list li {
+  font-size: 16px;
+  width: 30px;
+}
+.pagination-list li:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.filters-div {
+  margin-top: 10px;
+  display: flex;
+  gap: 15px;
+}
+.filters-div button {
+  font-size: 17px;
+  color: #c8c9cd;
+  font-weight: bold;
+  padding: 0 5px;
+  min-width: 200px;
+  border: none;
+  cursor: pointer;
+  background-color: rgba(34, 42, 73, 0.8);
+}
+
 @media (max-width: 992px) {
+  .anchor {
+    text-align: left;
+  }
   .justify-nav {
     display: flex;
     flex-direction: column;
@@ -189,12 +279,12 @@
     padding: 0;
     margin-top: 15px;
   }
-  .lista, .lista-larger-btn {
+  .lista {
     text-align: left;
     margin-left: 0;
     gap: 10px;
   }
-  .lista button, .lista-larger-btn button {
+  .lista button {
     text-align: left;
   }
   .products-section {
