@@ -1,0 +1,235 @@
+$input-background: rgba(34, 42, 73, 0.8);
+$input-text-inactive: #a5b2de;
+$input-text-active: #bfd2ff;
+
+@mixin button-styles($fs, $color, $fw, $padding, $width, $border) {
+  font-size: $fs;
+  color: $color;
+  font-weight: $fw;
+  padding: $padding;
+  width: $width;
+  border: $border;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+}
+
+.brand-title {
+  color: #1c2955;
+  font-weight: bold;
+}
+
+.justify {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.justify-nav {
+  @extend .justify;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 0 15px;
+  margin-left: 30px;
+  padding: 0 10px;
+}
+
+.input {
+  width: 300px;
+  padding: 5px;
+  padding-left: 10px;
+  background-color: $input-background;
+  color: white;
+  border: none;
+  border-radius: 3px;
+}
+
+.input::placeholder {
+  color: $input-text-inactive;
+}
+
+.lista {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  margin-left: 80px;
+  button {
+    @include button-styles(
+      17px,
+      rgba(102, 130, 234, 0.8),
+      bold,
+      0 5px,
+      100px,
+      none
+    );
+    cursor: pointer;
+    background-color: white;
+  }
+}
+
+.lista-larger-btn {
+  @extend .lista;
+  button {
+    width: 150px;
+  }
+}
+
+.c-item {
+  filter: brightness(0.6);
+  img {
+    height: 500px;
+    object-fit: cover;
+  }
+}
+
+.products-list {
+  margin-top: 20px;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(200px, 1fr));
+  gap: 10px;
+  place-content: center;
+  height: 250px;
+}
+
+.product-item {
+  padding-bottom: 10px;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  padding: 5px;
+  gap: 10px;
+  div {
+    width: 100%;
+    height: max-content;
+  }
+  p {
+    font-weight: bold;
+    padding: 0;
+    margin: 5px;
+  }
+
+  img {
+    height: 120px;
+    width: 120px;
+  }
+}
+
+.product-item:hover {
+  cursor: pointer;
+  border: 2px solid $input-background;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 10px;
+  height: 100%;
+  button {
+    @include button-styles(17px, #a5b2de, bold, 0 5px, 150px, none);
+    cursor: pointer;
+    background-color: black;
+  }
+  div {
+    display: flex;
+    justify-content: space-around;
+    gap: 8px;
+    margin-top: 10px;
+  }
+}
+
+.divisor {
+  border: 2px solid black;
+}
+
+.footer-container {
+  min-height: 200px;
+  margin-top: 20px;
+}
+
+.footer-row {
+  display: flex;
+  gap: 10px;
+  min-height: 200px;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  h2 {
+    color: $input-background;
+    font-weight: 600;
+  }
+  ul {
+    text-align: center;
+    list-style: none;
+    width: 100%;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 5px;
+    height: 100%;
+    li {
+      min-width: 200px;
+      text-align: center;
+      font-size: 20px;
+    }
+    li:hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+}
+
+/////
+@media (max-width: 992px) {
+  .justify-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0;
+    padding: 0;
+    margin-top: 15px;
+  }
+
+  .lista {
+    text-align: left;
+    margin-left: 0;
+    gap: 10px;
+    button {
+      text-align: left;
+    }
+  }
+
+  .products-section {
+    display: flex;
+    align-items: center;
+  }
+
+  .products-list {
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+  .product-item {
+    p {
+      margin-bottom: 10px;
+    }
+  }
+}
